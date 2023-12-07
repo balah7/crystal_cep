@@ -1,0 +1,9 @@
+name: crystal_cep
+version: 0.1.0
+
+authors:
+  - balah7 <linhabah@gmail.com>
+
+crystal: ">= 1.10.1"
+
+license: MIT
