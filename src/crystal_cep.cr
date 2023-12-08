@@ -53,4 +53,29 @@ module CCEP
       raise ArgumentError.new("Não foi possível acessar as informações do CEP no momento. Por favor, relate esse problema aos contribuidores e tente novamente mais tarde.")
     end
   end
+
+  def cep?(cep : String) : Bool
+    unless validar_cep?(cep)
+      raise ArgumentError.new("O CEP '#{cep}' não está no formato válido. Deve conter exatamente 8 (#{cep.size}) dígitos numéricos.")
+    end
+
+    url = "https://viacep.com.br/ws/#{cep}/json/"
+
+    # Make a GET request to the ViaCEP API
+    response = HTTP::Client.get(url)
+
+    # Check if the API request was successful
+    if response.success?
+      # Parse the JSON response
+      json_body = JSON.parse(%(#{response.body}))
+
+      # Check if the API response indicates an error
+      return true if json_body["cep"]?
+
+      return false
+    else
+      # Raise an error if the API request was not successful
+      raise ArgumentError.new("Não foi possível acessar as informações do CEP no momento. Por favor, relate esse problema aos contribuidores e tente novamente mais tarde.")
+    end
+  end
 end

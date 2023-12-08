@@ -8,11 +8,11 @@ describe CCEP do
 
   describe "#validar_cep?" do
     it "retorna true para um CEP válido" do
-      validar_cep?("12345678").should be_true
+      validar_cep?("12345678").should eq true
     end
 
     it "retorna false para um CEP inválido" do
-      validar_cep?("1234567b").should be_false
+      validar_cep?("1234567b").should eq false
     end
   end
 
@@ -27,4 +27,15 @@ describe CCEP do
       CCEP.info_cep("74765340").should be_a(Hash(String, String))
     end
   end
+
+  describe "#cep?" do
+  it "retorna true se o CEP for válido" do
+    CCEP.cep?("69900050").should eq true
+  end
+
+  it "retorna false se o CEP não for válido" do
+    CCEP.cep?("45012304").should eq false
+  end
+
+end
 end
