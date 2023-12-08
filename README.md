@@ -4,6 +4,8 @@
 
 A Biblioteca Crystal CEP é uma ferramenta poderosa e fácil de usar para desenvolvedores que trabalham com a linguagem de programação Crystal, permitindo a recuperação fácil e sem emendas de informações de endereço com base nos códigos postais brasileiros (CEP - Código de Endereçamento Postal). Esta biblioteca que usa a api [ViaCEP](https://viacep.com.br/), simplifica o processo de integração da funcionalidade de consulta de CEP em suas aplicações Crystal, fornecendo detalhes precisos e atualizados para um determinado CEP.
 
+[![GitHub release](https://img.shields.io/github/release/balah7/crystal_cep.svg)](https://github.com/balah7/crystal_cep/releases)
+
 ## Instalação
 
 1. Adicione a dependência ao seu `shard.yml`:
