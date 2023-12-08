@@ -39,10 +39,9 @@ module CCEP
       raise ArgumentError.new("Não foi possível acessar as informações do CEP no momento. Por favor, relate esse problema aos contribuidores e tente novamente mais tarde.")
     end
   end
+
+  def get_cep()
+
+  end
+
 end
-
-include CCEP
-
-# puts CCEP.info_cep("74765340")
-# puts "---------------------"
-# puts CCEP.info_cep("00000099")

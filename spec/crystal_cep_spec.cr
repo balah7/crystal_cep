@@ -2,6 +2,9 @@ require "./spec_helper"
 
 describe CCEP do
   # TODO: Write tests
+  it "constante deve retornar o nome do pais" do
+    CCEP::COUNTRY.should eq "Brasil"
+  end
 
   describe "#validar_cep?" do
     it "retorna true para um CEP válido" do
