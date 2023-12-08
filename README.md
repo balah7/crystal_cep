@@ -1,39 +1,62 @@
 # crystal_cep
 
-TODO: Write a description here
+<img src="https://img.shields.io/badge/shards-v0.1.0-purple" alt="Shard Version">
 
-## Installation
+A Biblioteca Crystal CEP é uma ferramenta poderosa e fácil de usar para desenvolvedores que trabalham com a linguagem de programação Crystal, permitindo a recuperação fácil e sem emendas de informações de endereço com base nos códigos postais brasileiros (CEP - Código de Endereçamento Postal). Esta biblioteca que usa a api [ViaCEP](https://viacep.com.br/), simplifica o processo de integração da funcionalidade de consulta de CEP em suas aplicações Crystal, fornecendo detalhes precisos e atualizados para um determinado CEP.
 
-1. Add the dependency to your `shard.yml`:
+## Instalação
+
+1. Adicione a dependência ao seu `shard.yml`:
 
    ```yaml
    dependencies:
      crystal_cep:
-       github: your-github-user/crystal_cep
+       github: balah7/crystal_cep
    ```
 
-2. Run `shards install`
+2. Execute `shards install`
 
-## Usage
+## Uso
+
+Requerimento:
 
 ```crystal
 require "crystal_cep"
 ```
 
-TODO: Write usage instructions here
+Pequeno exemplo: (CCEP)
 
-## Development
+```crystal
+require "crystal_cep"
 
-TODO: Write development instructions here
+# --- Função info_get -> Função onde irá passar como argumento o CEP (String) apenas número e 8 caracteres e irá retornar um Hash de String com as informações sobre o cep.
+data = CCEP.info_cep("01001000")
+puts data
+# => {"cep" => "01001000", "street" => "Praça da Sé", "complement" => "", "hood" => "Sé", "city" => "São Paulo", "uf" => "SP", "ddd" => "11", "ibge" => "3550308"}
 
-## Contributing
+data["cep"]
+# => 01001000
 
-1. Fork it (<https://github.com/balah7/crystal_cep/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+data["street"]
+# => "Praça de Sé"
 
-## Contributors
+data["complement"]
+# => ""
 
-- [balah7](https://github.com/balah7) - creator and maintainer
+data = CCEP.info_cep("01001-000")
+# => Error
+
+...
+```
+
+## Contribuição
+
+1. Fork o repositório (<https://github.com/balah7/crystal_cep/fork>)
+2. Crie uma branch para sua nova feature (`git checkout -b my-new-feature`)
+3. Faça suas alterações (`git commit -am 'Add some feature'`)
+4. Envie suas alterações para a sua branch (`git push origin my-new-feature`)
+5. Crie um novo Pull Request
+
+## Contribuidores
+
+- [balah7](https://github.com/balah7) - criador e mantenedor
