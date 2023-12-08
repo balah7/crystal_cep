@@ -29,7 +29,7 @@ Pequeno exemplo: (CCEP)
 ```crystal
 require "crystal_cep"
 
-# --- Função info_get -> Função onde irá passar como argumento o CEP (String) apenas número e 8 caracteres e irá retornar um Hash de String com as informações sobre o cep.
+# --- Função info_get(cep : String) : Hash(String, String) -> Função onde irá passar como argumento o CEP (String) apenas número e 8 caracteres e irá retornar um Hash de String com as informações sobre o cep.
 data = CCEP.info_cep("01001000")
 puts data
 # => {"cep" => "01001000", "street" => "Praça da Sé", "complement" => "", "hood" => "Sé", "city" => "São Paulo", "uf" => "SP", "ddd" => "11", "ibge" => "3550308"}
